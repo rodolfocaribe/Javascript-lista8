@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
     <style>
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
         label,
         input[type="text"],
         a {
@@ -50,17 +54,19 @@
 </head>
 
 <body>
+
 <form>
     <label for="userInput">Usuario</label>
     <input type="text" name="userInput" id="userInput">
 
     <label for="passwordInput">Senha</label>
     <input type="password" name="passwordInput" id="passwordInput">
-
+<br>
     <input type="button" value="Cadastrar" onclick="criarUsuario()">
     <input type="reset" value="Limpar">
 
 </form>
+
 <a onclick="paginaUsuario()">Mostrar usuário cadastrado</a>
 </body>
 
