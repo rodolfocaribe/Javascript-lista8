@@ -1,38 +1,67 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
-  <meta charset="utf-8">
-  <title>LISTA 8</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <style>
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <script>
-    function recordInfo() {
-      var usuario = document.getElementById("usuario").value;
-      var senha = document.getElementById("senha").value;
-      localStorage.setItem("usuario", usuario);
-      localStorage.setItem("senha", senha);
-    }
-  </script>
+        label,
+        input[type="text"],
+        a {
+            display: block;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        a,
+        label,
+        input[type="button"] {
+            margin-top: 16px;
+        }
+    </style>
+    <script>
+        function paginaUsuario() {
+            window.location.href = "listarUsuario.html"
+        }
+
+        function criarUsuario() {
+            user = document.getElementById("userInput").value
+            pass = document.getElementById("passwordInput").value
+            if (!user) {
+                alert("Digite um usuário")
+                document.getElementById("userInput").focus()
+                return;
+            }
+            if (!pass) {
+                alert("Digite uma senha")
+                document.getElementById("passwordInput").focus()
+                return;
+            }
+            window.localStorage.setItem("user", JSON.stringify({ user, pass }))
+            alert("Usuario criado com sucesso!")
+        }
+
+    </script>
 </head>
+
 <body>
-
 <form>
-  <fieldset id="form">
-    <legend>LOGIN</legend>
-    <label for="usuario">Usuario:</label>
-    <input type="text" name="usuario" id="usuario" required>
-    <label for="senha">Senha:</label>
-    <input type="password" name="senha" id="senha" required>
-    <input type="submit" value="Entrar" onclick="recordInfo()">
-    <input type="submit" value="Limpar">
-  </fieldset>
+    <label for="userInput">Usuario</label>
+    <input type="text" name="userInput" id="userInput">
+
+    <label for="passwordInput">Senha</label>
+    <input type="password" name="passwordInput" id="passwordInput">
+
+    <input type="button" value="Cadastrar" onclick="criarUsuario()">
+    <input type="reset" value="Limpar">
+
 </form>
-
-
-
+<a onclick="paginaUsuario()">Mostrar usuário cadastrado</a>
 </body>
+
 </html>
