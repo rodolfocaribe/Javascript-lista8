@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    function mostrarUsuarios() {
+      var usuario = localStorage.getItem("usuario");
+      var senha = localStorage.getItem("senha");
+      document.write("<h1>Usuarios cadastrados</h1>");
+      document.write("<p>Usuario: " + usuario + "</p>");
+      document.write("<p>Senha: " + senha + "</p>");
+      // document.getElementById("usuario").innerHTML = usuario;
+      // document.getElementById("senha").innerHTML = senha;
+    }
+  </script>
+</head>
+<body onload="mostrarUsuarios()">
+
+</body>
+</html>
